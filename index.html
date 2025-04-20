@@ -62,6 +62,12 @@
     section {
       margin-bottom: 20px;
     }
+    iframe {
+      width: 100%;
+      height: 300px;
+      border: none;
+      margin-top: 20px;
+    }
     footer {
       text-align: center;
       margin-top: 30px;
@@ -123,8 +129,9 @@
     <section id="contact">
       <h2 id="contact-title">Контакты</h2>
       <p><strong id="address-label">Адрес:</strong> Jardi 71, Hospitalet, Barcelona</p>
-      <p><strong id="phone-label">Телефон:</strong> +34 623 270 609</p>
-      <p><strong id="email-label">Email:</strong> info@automotriz.ru</p>
+      <p><strong id="phone-label">Телефон:</strong> <a href="tel:+34623270609">+34 623 270 609</a></p>
+      <p><strong id="email-label">Email:</strong> <a href="mailto:info@automotriz.ru">info@automotriz.ru</a></p>
+      <iframe src="https://www.google.com/maps?q=Jardi+71,+Hospitalet,+Barcelona&output=embed"></iframe>
     </section>
   </main>
 
@@ -132,14 +139,43 @@
     © 2025 СТО Automotriz. Все права защищены.
   </footer>
 </div>
-
 <script>
   const translations = {
-    ru: { title: "СТО Automotriz", "nav-about": "О нас", "nav-services": "Услуги", "nav-booking": "Запись", "nav-contact": "Контакты", "about-title": "О нас", "about-text": "СТО Automotriz — надёжный автосервис в Барселоне. Профессионализм, гарантия, качество.", "services-title": "Наши услуги", "services-list": ["Обслуживание и ремонт автомобилей","Шиномонтаж","Автодиагностика","Обслуживание двигателя и коробки передач","Электрика","Ходовая"], "booking-title": "Записаться онлайн", "contact-title": "Контакты", "address-label": "Адрес:", "phone-label": "Телефон:", "email-label": "Email:", "placeholder-name": "Ваше имя", "placeholder-phone": "Телефон", "placeholder-comment": "Комментарий", "placeholder-submit": "Отправить" },
-    en: { title: "Automotriz Service", "nav-about": "About", "nav-services": "Services", "nav-booking": "Booking", "nav-contact": "Contacts", "about-title": "About Us", "about-text": "Automotriz is a reliable auto service in Barcelona. Professionalism, warranty, quality.", "services-title": "Our Services", "services-list": ["Car maintenance and repair","Tire fitting","Diagnostics","Engine and transmission","Electric system","Suspension"], "booking-title": "Book Online", "contact-title": "Contacts", "address-label": "Address:", "phone-label": "Phone:", "email-label": "Email:", "placeholder-name": "Your name", "placeholder-phone": "Phone", "placeholder-comment": "Comment", "placeholder-submit": "Send" },
-    es: { title: "Servicio Automotriz", "nav-about": "Sobre nosotros", "nav-services": "Servicios", "nav-booking": "Reservar", "nav-contact": "Contactos", "about-title": "Sobre nosotros", "about-text": "Automotriz es un servicio confiable en Barcelona. Profesionalismo, garantía y calidad.", "services-title": "Nuestros servicios", "services-list": ["Mantenimiento y reparación","Montaje de neumáticos","Diagnóstico","Motor y transmisión","Sistema eléctrico","Suspensión"], "booking-title": "Reservar online", "contact-title": "Contactos", "address-label": "Dirección:", "phone-label": "Teléfono:", "email-label": "Correo:", "placeholder-name": "Su nombre", "placeholder-phone": "Teléfono", "placeholder-comment": "Comentario", "placeholder-submit": "Enviar" },
-    ua: { title: "СТО Automotriz", "nav-about": "Про нас", "nav-services": "Послуги", "nav-booking": "Запис", "nav-contact": "Контакти", "about-title": "Про нас", "about-text": "Automotriz — надійний автосервіс у Барселоні. Професіоналізм, гарантія, якість.", "services-title": "Наші послуги", "services-list": ["Обслуговування та ремонт авто","Шиномонтаж","Діагностика","Двигун і трансмісія","Електрика","Ходова"], "booking-title": "Запис онлайн", "contact-title": "Контакти", "address-label": "Адреса:", "phone-label": "Телефон:", "email-label": "Email:", "placeholder-name": "Ваше ім’я", "placeholder-phone": "Телефон", "placeholder-comment": "Коментар", "placeholder-submit": "Надіслати" },
-    ca: { title: "Servei Automotriz", "nav-about": "Sobre nosaltres", "nav-services": "Serveis", "nav-booking": "Cita", "nav-contact": "Contactes", "about-title": "Sobre nosaltres", "about-text": "Automotriz és un servei de confiança a Barcelona. Professionalitat, garantia i qualitat.", "services-title": "Els nostres serveis", "services-list": ["Manteniment i reparació","Canvi de pneumàtics","Diagnòstic","Motor i transmissió","Sistema elèctric","Suspensió"], "booking-title": "Cita en línia", "contact-title": "Contactes", "address-label": "Adreça:", "phone-label": "Telèfon:", "email-label": "Correu:", "placeholder-name": "Nom", "placeholder-phone": "Telèfon", "placeholder-comment": "Comentari", "placeholder-submit": "Enviar" }
+    ru: {
+      title: "СТО Automotriz", "nav-about": "О нас", "nav-services": "Услуги", "nav-booking": "Запись", "nav-contact": "Контакты",
+      "about-title": "О нас", "about-text": "СТО Automotriz — надёжный автосервис в Барселоне. Профессионализм, гарантия, качество.",
+      "services-title": "Наши услуги", "services-list": ["Обслуживание и ремонт автомобилей", "Шиномонтаж", "Автодиагностика", "Обслуживание двигателя и коробки передач", "Электрика", "Ходовая"],
+      "booking-title": "Записаться онлайн", "contact-title": "Контакты", "address-label": "Адрес:", "phone-label": "Телефон:", "email-label": "Email:",
+      "placeholder-name": "Ваше имя", "placeholder-phone": "Телефон", "placeholder-comment": "Комментарий", "placeholder-submit": "Отправить"
+    },
+    en: {
+      title: "Automotriz Service", "nav-about": "About", "nav-services": "Services", "nav-booking": "Booking", "nav-contact": "Contacts",
+      "about-title": "About Us", "about-text": "Automotriz is a reliable auto service in Barcelona. Professionalism, warranty, quality.",
+      "services-title": "Our Services", "services-list": ["Car maintenance and repair", "Tire fitting", "Diagnostics", "Engine and transmission", "Electric system", "Suspension"],
+      "booking-title": "Book Online", "contact-title": "Contacts", "address-label": "Address:", "phone-label": "Phone:", "email-label": "Email:",
+      "placeholder-name": "Your name", "placeholder-phone": "Phone", "placeholder-comment": "Comment", "placeholder-submit": "Send"
+    },
+    es: {
+      title: "Servicio Automotriz", "nav-about": "Sobre nosotros", "nav-services": "Servicios", "nav-booking": "Reservar", "nav-contact": "Contactos",
+      "about-title": "Sobre nosotros", "about-text": "Automotriz es un servicio confiable en Barcelona. Profesionalismo, garantía y calidad.",
+      "services-title": "Nuestros servicios", "services-list": ["Mantenimiento y reparación", "Montaje de neumáticos", "Diagnóstico", "Motor y transmisión", "Sistema eléctrico", "Suspensión"],
+      "booking-title": "Reservar online", "contact-title": "Contactos", "address-label": "Dirección:", "phone-label": "Teléfono:", "email-label": "Correo:",
+      "placeholder-name": "Su nombre", "placeholder-phone": "Teléfono", "placeholder-comment": "Comentario", "placeholder-submit": "Enviar"
+    },
+    ua: {
+      title: "СТО Automotriz", "nav-about": "Про нас", "nav-services": "Послуги", "nav-booking": "Запис", "nav-contact": "Контакти",
+      "about-title": "Про нас", "about-text": "Automotriz — надійний автосервіс у Барселоні. Професіоналізм, гарантія, якість.",
+      "services-title": "Наші послуги", "services-list": ["Обслуговування та ремонт авто", "Шиномонтаж", "Діагностика", "Двигун і трансмісія", "Електрика", "Ходова"],
+      "booking-title": "Запис онлайн", "contact-title": "Контакти", "address-label": "Адреса:", "phone-label": "Телефон:", "email-label": "Email:",
+      "placeholder-name": "Ваше ім’я", "placeholder-phone": "Телефон", "placeholder-comment": "Коментар", "placeholder-submit": "Надіслати"
+    },
+    ca: {
+      title: "Servei Automotriz", "nav-about": "Sobre nosaltres", "nav-services": "Serveis", "nav-booking": "Cita", "nav-contact": "Contactes",
+      "about-title": "Sobre nosaltres", "about-text": "Automotriz és un servei de confiança a Barcelona. Professionalitat, garantia i qualitat.",
+      "services-title": "Els nostres serveis", "services-list": ["Manteniment i reparació", "Canvi de pneumàtics", "Diagnòstic", "Motor i transmissió", "Sistema elèctric", "Suspensió"],
+      "booking-title": "Cita en línia", "contact-title": "Contactes", "address-label": "Adreça:", "phone-label": "Telèfon:", "email-label": "Correu:",
+      "placeholder-name": "Nom", "placeholder-phone": "Telèfon", "placeholder-comment": "Comentari", "placeholder-submit": "Enviar"
+    }
   };
 
   function setLang(lang) {
