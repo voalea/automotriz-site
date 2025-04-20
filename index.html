@@ -29,4 +29,149 @@
         "address-label": "Адрес:",
         "phone-label": "Телефон:",
         "email-label": "Email:",
-        "
+        "placeholder-name": "Ваше имя",
+        "placeholder-phone": "Телефон",
+        "placeholder-comment": "Комментарий",
+        "placeholder-submit": "Отправить"
+      },
+      en: {
+        title: "Automotriz Service",
+        "nav-about": "About",
+        "nav-services": "Services",
+        "nav-booking": "Booking",
+        "nav-contact": "Contacts",
+        "about-title": "About Us",
+        "about-text": "Automotriz is a reliable auto service in Barcelona. Professionalism, warranty, quality.",
+        "services-title": "Our Services",
+        "services-list": [
+          "Car maintenance and repair",
+          "Tire fitting",
+          "Diagnostics",
+          "Engine and transmission service",
+          "Electric system",
+          "Suspension"
+        ],
+        "booking-title": "Book Online",
+        "contact-title": "Contacts",
+        "address-label": "Address:",
+        "phone-label": "Phone:",
+        "email-label": "Email:",
+        "placeholder-name": "Your name",
+        "placeholder-phone": "Phone",
+        "placeholder-comment": "Comment",
+        "placeholder-submit": "Send"
+      },
+      es: {
+        title: "Servicio Automotriz",
+        "nav-about": "Sobre nosotros",
+        "nav-services": "Servicios",
+        "nav-booking": "Reservar",
+        "nav-contact": "Contactos",
+        "about-title": "Sobre nosotros",
+        "about-text": "Automotriz es un servicio confiable en Barcelona. Profesionalismo, garantía y calidad.",
+        "services-title": "Nuestros servicios",
+        "services-list": [
+          "Mantenimiento y reparación",
+          "Montaje de neumáticos",
+          "Diagnóstico",
+          "Motor y transmisión",
+          "Sistema eléctrico",
+          "Suspensión"
+        ],
+        "booking-title": "Reservar online",
+        "contact-title": "Contactos",
+        "address-label": "Dirección:",
+        "phone-label": "Teléfono:",
+        "email-label": "Correo:",
+        "placeholder-name": "Su nombre",
+        "placeholder-phone": "Teléfono",
+        "placeholder-comment": "Comentario",
+        "placeholder-submit": "Enviar"
+      },
+      ua: {
+        title: "СТО Automotriz",
+        "nav-about": "Про нас",
+        "nav-services": "Послуги",
+        "nav-booking": "Запис",
+        "nav-contact": "Контакти",
+        "about-title": "Про нас",
+        "about-text": "Automotriz — надійний автосервіс у Барселоні. Професіоналізм, гарантія, якість.",
+        "services-title": "Наші послуги",
+        "services-list": [
+          "Обслуговування та ремонт авто",
+          "Шиномонтаж",
+          "Діагностика",
+          "Двигун і трансмісія",
+          "Електрика",
+          "Ходова"
+        ],
+        "booking-title": "Запис онлайн",
+        "contact-title": "Контакти",
+        "address-label": "Адреса:",
+        "phone-label": "Телефон:",
+        "email-label": "Email:",
+        "placeholder-name": "Ваше ім’я",
+        "placeholder-phone": "Телефон",
+        "placeholder-comment": "Коментар",
+        "placeholder-submit": "Надіслати"
+      },
+      ca: {
+        title: "Servei Automotriz",
+        "nav-about": "Sobre nosaltres",
+        "nav-services": "Serveis",
+        "nav-booking": "Cita",
+        "nav-contact": "Contactes",
+        "about-title": "Sobre nosaltres",
+        "about-text": "Automotriz és un servei de confiança a Barcelona. Professionalitat, garantia i qualitat.",
+        "services-title": "Els nostres serveis",
+        "services-list": [
+          "Manteniment i reparació",
+          "Canvi de pneumàtics",
+          "Diagnòstic",
+          "Motor i transmissió",
+          "Sistema elèctric",
+          "Suspensió"
+        ],
+        "booking-title": "Cita en línia",
+        "contact-title": "Contactes",
+        "address-label": "Adreça:",
+        "phone-label": "Telèfon:",
+        "email-label": "Correu:",
+        "placeholder-name": "Nom",
+        "placeholder-phone": "Telèfon",
+        "placeholder-comment": "Comentari",
+        "placeholder-submit": "Enviar"
+      }
+    };
+
+    function setLang(lang) {
+      localStorage.setItem('lang', lang);
+      const t = translations[lang];
+      if (!t) return;
+      for (const key in t) {
+        const el = document.getElementById(key);
+        if (el) {
+          if (key.startsWith("placeholder-")) {
+            if (el.tagName === "BUTTON") el.textContent = t[key];
+            else el.placeholder = t[key];
+          } else if (Array.isArray(t[key])) {
+            el.innerHTML = t[key].map(li => `<li>${li}</li>`).join('');
+          } else {
+            el.textContent = t[key];
+          }
+        }
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const savedLang = localStorage.getItem("lang") || navigator.language.slice(0, 2);
+      const supported = Object.keys(translations);
+      const lang = supported.includes(savedLang) ? savedLang : 'ru';
+      setLang(lang);
+    });
+  </script>
+</head>
+<body>
+<!-- остальной HTML-контент сайта -->
+</body>
+</html>
