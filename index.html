@@ -107,6 +107,61 @@
     <header>
       <img src="fon-garazh.png" alt="Логотип" />
       <h1 id="title">СТО Automotriz</h1>
+<script>
+  const translations = {
+    ru: {
+      title: "СТО Automotriz",
+      "nav-about": "О нас",
+      "nav-services": "Услуги",
+      "nav-booking": "Запись",
+      "nav-contact": "Контакты",
+      "about-title": "О нас",
+      "about-text": "СТО Automotriz — надёжный автосервис в Барселоне. Профессионализм, гарантия, качество.",
+      "services-title": "Наши услуги",
+      "services-list": [
+        "Обслуживание и ремонт автомобилей",
+        "Шиномонтаж",
+        "Автодиагностика",
+        "Обслуживание двигателя и коробки передач",
+        "Электрика",
+        "Ходовая"
+      ],
+      "booking-title": "Записаться онлайн",
+      "contact-title": "Контакты",
+      "address-label": "Адрес:",
+      "phone-label": "Телефон:",
+      "email-label": "Email:",
+      "placeholder-name": "Ваше имя",
+      "placeholder-phone": "Телефон",
+      "placeholder-comment": "Комментарий",
+      "placeholder-submit": "Отправить"
+    }
+  };
+
+  function setLang(lang) {
+    localStorage.setItem('lang', lang);
+    const t = translations[lang];
+    if (!t) return;
+    for (const id in t) {
+      const el = document.getElementById(id);
+      if (!el) continue;
+      if (id.startsWith("placeholder-")) {
+        if (el.tagName === "BUTTON") el.textContent = t[id];
+        else el.placeholder = t[id];
+      } else if (Array.isArray(t[id])) {
+        el.innerHTML = t[id].map(text => `<li>${text}</li>`).join('');
+      } else {
+        el.textContent = t[id];
+      }
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const saved = localStorage.getItem("lang") || navigator.language.slice(0, 2);
+    const supported = ['ru'];
+    setLang(supported.includes(saved) ? saved : 'ru');
+  });
+</script>
     </header>
 
     <nav>
