@@ -5,30 +5,78 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>СТО Automotriz</title>
   <style>
-    body { font-family: sans-serif; padding: 20px; }
-    h1 { color: #222; }
-    h2 { margin-top: 30px; }
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: sans-serif;
+      background: url('https://i.gifer.com/7VE.gif') no-repeat center center fixed;
+      background-size: cover;
+      color: white;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+    }
+    main, header, footer {
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 20px;
+      margin: 10px;
+      border-radius: 10px;
+    }
+    h1, h2 {
+      color: #fff;
+    }
     ul { padding-left: 20px; }
   </style>
 </head>
 <body>
-  <h1>СТО Automotriz</h1>
-  <h2>О нас</h2>
-  <p>СТО Automotriz — надёжный автосервис в Барселоне. Профессионализм, гарантия, качество.</p>
+  <header>
+    <h1>СТО Automotriz</h1>
+    <nav>
+      <a href="#about">О нас</a> |
+      <a href="#services">Услуги</a> |
+      <a href="#booking">Запись</a> |
+      <a href="#contact">Контакты</a>
+    </nav>
+  </header>
 
-  <h2>Наши услуги</h2>
-  <ul>
-    <li>Обслуживание и ремонт автомобилей</li>
-    <li>Шиномонтаж</li>
-    <li>Автодиагностика</li>
-    <li>Обслуживание двигателя и коробки передач</li>
-    <li>Электрика</li>
-    <li>Ходовая</li>
-  </ul>
+  <main>
+    <section id="about">
+      <h2>О нас</h2>
+      <p>СТО Automotriz — надёжный автосервис в Барселоне. Профессионализм, гарантия, качество.</p>
+    </section>
 
-  <h2>Контакты</h2>
-  <p>📍 Адрес: Адрес: Jardi 71, Hospitalet, Barcelona</p>
-  <p>📞 Телефон: +34 623 270 609</p>
-  <p>📧 Email: info@automotriz.ru</p>
+    <section id="services">
+      <h2>Наши услуги</h2>
+      <ul>
+        <li>Обслуживание и ремонт автомобилей</li>
+        <li>Шиномонтаж</li>
+        <li>Автодиагностика</li>
+        <li>Обслуживание двигателя и коробки передач</li>
+        <li>Электрика</li>
+        <li>Ходовая</li>
+      </ul>
+    </section>
+
+    <section id="booking">
+      <h2>Записаться онлайн</h2>
+      <form action="https://formsubmit.co/merrypopins1029@gmail.com" method="POST">
+        <input type="text" name="name" placeholder="Ваше имя" required><br><br>
+        <input type="tel" name="phone" placeholder="Телефон" required><br><br>
+        <input type="date" name="date" required><br><br>
+        <input type="time" name="time" required><br><br>
+        <textarea name="comment" placeholder="Комментарий"></textarea><br><br>
+        <button type="submit">Отправить</button>
+      </form>
+    </section>
+
+    <section id="contact">
+      <h2>Контакты</h2>
+      <p><strong>Адрес:</strong> Jardi 71, Hospitalet, Barcelona</p>
+      <p><strong>Телефон:</strong> +34 623 270 609</p>
+      <p><strong>Email:</strong> info@automotriz.ru</p>
+    </section>
+  </main>
+
+  <footer>
+    © 2025 СТО Automotriz. Все права защищены.
+  </footer>
 </body>
 </html>
