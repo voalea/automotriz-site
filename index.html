@@ -135,33 +135,25 @@
       "placeholder-phone": "Телефон",
       "placeholder-comment": "Комментарий",
       "placeholder-submit": "Отправить"
-    }
-  };
-
-  function setLang(lang) {
-    localStorage.setItem('lang', lang);
-    const t = translations[lang];
-    if (!t) return;
-    for (const id in t) {
-      const el = document.getElementById(id);
-      if (!el) continue;
-      if (id.startsWith("placeholder-")) {
-        if (el.tagName === "BUTTON") el.textContent = t[id];
-        else el.placeholder = t[id];
-      } else if (Array.isArray(t[id])) {
-        el.innerHTML = t[id].map(text => `<li>${text}</li>`).join('');
-      } else {
-        el.textContent = t[id];
-      }
-    }
-  }
-
-  document.addEventListener("DOMContentLoaded", () => {
-    const saved = localStorage.getItem("lang") || navigator.language.slice(0, 2);
-    const supported = ['ru'];
-    setLang(supported.includes(saved) ? saved : 'ru');
-  });
-</script>
+    },
+    en: {
+      title: "Automotriz Service",
+      "nav-about": "About",
+      "nav-services": "Services",
+      "nav-booking": "Booking",
+      "nav-contact": "Contact",
+      "about-title": "About Us",
+      "about-text": "Automotriz is a trusted car service in Barcelona.",
+      "services-title": "Our Services",
+      "services-list": [
+        "Maintenance and car repair",
+        "Tire service",
+        "Car diagnostics",
+        "Engine and transmission service",
+        "Electrical",
+        "Suspension"
+      ],
+      "booking-title": "
     </header>
 
     <nav>
