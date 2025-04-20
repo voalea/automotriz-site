@@ -17,8 +17,8 @@
     .container {
       background-color: rgba(0, 0, 0, 0.7);
       max-width: 800px;
-      margin: 40px auto;
-      padding: 30px;
+      margin: 20px auto;
+      padding: 20px;
       border-radius: 12px;
     }
     header {
@@ -27,6 +27,7 @@
       gap: 15px;
       flex-wrap: wrap;
       justify-content: center;
+      text-align: center;
     }
     header img {
       height: 50px;
@@ -37,9 +38,11 @@
     nav {
       text-align: center;
       margin: 20px 0;
+      flex-wrap: wrap;
     }
     nav a {
-      margin: 0 10px;
+      display: inline-block;
+      margin: 5px 10px;
       color: #66ccff;
       text-decoration: none;
     }
@@ -48,12 +51,12 @@
     }
     .lang-select {
       text-align: center;
-      margin-bottom: 20px;
+      margin: 20px 0;
     }
     .lang-select img {
-      width: 24px;
-      height: 24px;
-      margin: 0 5px;
+      width: 32px;
+      height: 32px;
+      margin: 5px 8px;
       cursor: pointer;
     }
     ul {
@@ -61,10 +64,11 @@
     }
     form input, form textarea, form button {
       width: 100%;
-      padding: 10px;
-      margin-bottom: 10px;
+      padding: 12px;
+      margin-bottom: 12px;
       border-radius: 5px;
       border: none;
+      font-size: 16px;
     }
     form button {
       background-color: #66ccff;
@@ -72,21 +76,30 @@
       font-weight: bold;
       cursor: pointer;
     }
+    .social-icons {
+      text-align: center;
+      margin: 15px 0;
+    }
     .social-icons a {
       margin: 0 10px;
       color: white;
-      font-size: 1.5em;
+      font-size: 1.8em;
       text-decoration: none;
+    }
+    .buttons {
+      text-align: center;
+      margin-top: 15px;
     }
     .buttons a {
       display: inline-block;
       margin: 10px 5px;
-      padding: 10px 15px;
+      padding: 12px 20px;
       background-color: #66ccff;
       color: black;
       border-radius: 5px;
       text-decoration: none;
       font-weight: bold;
+      font-size: 16px;
     }
     iframe {
       width: 100%;
@@ -99,6 +112,12 @@
       margin-top: 30px;
       font-size: 0.9em;
       color: #ccc;
+    }
+    @media screen and (max-width: 600px) {
+      h1 { font-size: 20px; }
+      nav a { font-size: 16px; }
+      form input, form textarea, form button { font-size: 14px; }
+      .buttons a { font-size: 14px; padding: 10px 15px; }
     }
   </style>
 </head>
@@ -148,39 +167,4 @@
           <input type="tel" name="phone" placeholder="Телефон" required>
           <input type="date" name="date" required>
           <input type="time" name="time" required>
-          <textarea name="comment" placeholder="Комментарий"></textarea>
-          <button type="submit">Отправить</button>
-        </form>
-      </section>
-
-      <section id="contact">
-        <h2 id="contact-title">Контакты</h2>
-        <p><strong id="address-label">Адрес:</strong> Jardi 71, Hospitalet, Barcelona</p>
-        <p><strong id="phone-label">Телефон:</strong> <a href="tel:+34623270609">+34 623 270 609</a></p>
-        <p><strong id="email-label">Email:</strong> <a href="mailto:info@automotriz.ru">info@automotriz.ru</a></p>
-
-        <div class="buttons">
-          <a href="tel:+34623270609">📞 Позвонить</a>
-          <a href="#booking">✍️ Написать</a>
-        </div>
-
-        <div class="social-icons">
-          <a href="#" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-          <a href="#" title="Telegram"><i class="fab fa-telegram"></i></a>
-          <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
-        </div>
-
-        <iframe src="https://www.google.com/maps?q=Jardi+71,+Hospitalet,+Barcelona&output=embed"></iframe>
-      </section>
-    </main>
-
-    <footer>
-      © 2025 СТО Automotriz. Все права защищены.
-    </footer>
-  </div>
-
-  <script>
-    // оставим скрипт перевода как есть (для краткости)
-  </script>
-</body>
-</html>
+          <textarea name="comment" placeholder="Комментарий"></texta
