@@ -107,6 +107,22 @@
       border: none;
       margin-top: 20px;
     }
+    .gallery img {
+      width: 100%;
+      margin-bottom: 10px;
+      border-radius: 10px;
+    }
+    .testimonial {
+      background-color: rgba(255, 255, 255, 0.1);
+      padding: 15px;
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
+    .testimonial strong {
+      display: block;
+      margin-bottom: 5px;
+      color: #66ccff;
+    }
     footer {
       text-align: center;
       margin-top: 30px;
@@ -160,6 +176,26 @@
         </ul>
       </section>
 
+      <section id="gallery">
+        <h2>Галерея</h2>
+        <div class="gallery">
+          <img src="https://via.placeholder.com/800x400?text=Фото+1" alt="Фото 1">
+          <img src="https://via.placeholder.com/800x400?text=Фото+2" alt="Фото 2">
+        </div>
+      </section>
+
+      <section id="testimonials">
+        <h2>Отзывы клиентов</h2>
+        <div class="testimonial">
+          <strong>Анна:</strong>
+          Отличный сервис! Всё быстро и качественно.
+        </div>
+        <div class="testimonial">
+          <strong>John:</strong>
+          Professional staff and fair pricing. Highly recommend!
+        </div>
+      </section>
+
       <section id="booking">
         <h2 id="booking-title">Записаться онлайн</h2>
         <form action="https://formsubmit.co/merrypopins1029@gmail.com" method="POST">
@@ -170,6 +206,9 @@
           <textarea name="comment" placeholder="Комментарий"></textarea>
           <button type="submit">Отправить</button>
         </form>
+        <div class="buttons">
+          <a href="https://t.me/yourtelegram" target="_blank">📩 Записаться в Telegram</a>
+        </div>
       </section>
 
       <section id="contact">
