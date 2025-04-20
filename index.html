@@ -35,6 +35,16 @@
     nav a:hover {
       text-decoration: underline;
     }
+    .lang-select {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .lang-select img {
+      width: 24px;
+      height: 24px;
+      margin: 0 5px;
+      cursor: pointer;
+    }
     ul {
       padding-left: 20px;
     }
@@ -61,25 +71,32 @@
 </head>
 <body>
   <div class="container">
+    <div class="lang-select">
+      <img src="https://flagcdn.com/ru.svg" alt="Русский" onclick="setLang('ru')">
+      <img src="https://flagcdn.com/gb.svg" alt="English" onclick="setLang('en')">
+      <img src="https://flagcdn.com/es.svg" alt="Español" onclick="setLang('es')">
+      <img src="https://flagcdn.com/ua.svg" alt="Українська" onclick="setLang('ua')">
+      <img src="https://flagcdn.com/cat.svg" alt="Català" onclick="setLang('ca')">
+    </div>
     <header>
-      <h1>СТО Automotriz</h1>
+      <h1 id="title">СТО Automotriz</h1>
       <nav>
-        <a href="#about">О нас</a>
-        <a href="#services">Услуги</a>
-        <a href="#booking">Запись</a>
-        <a href="#contact">Контакты</a>
+        <a href="#about" id="nav-about">О нас</a>
+        <a href="#services" id="nav-services">Услуги</a>
+        <a href="#booking" id="nav-booking">Запись</a>
+        <a href="#contact" id="nav-contact">Контакты</a>
       </nav>
     </header>
 
     <main>
       <section id="about">
-        <h2>О нас</h2>
-        <p>СТО Automotriz — надёжный автосервис в Барселоне. Профессионализм, гарантия, качество.</p>
+        <h2 id="about-title">О нас</h2>
+        <p id="about-text">СТО Automotriz — надёжный автосервис в Барселоне. Профессионализм, гарантия, качество.</p>
       </section>
 
       <section id="services">
-        <h2>Наши услуги</h2>
-        <ul>
+        <h2 id="services-title">Наши услуги</h2>
+        <ul id="services-list">
           <li>Обслуживание и ремонт автомобилей</li>
           <li>Шиномонтаж</li>
           <li>Автодиагностика</li>
@@ -90,7 +107,7 @@
       </section>
 
       <section id="booking">
-        <h2>Записаться онлайн</h2>
+        <h2 id="booking-title">Записаться онлайн</h2>
         <form action="https://formsubmit.co/merrypopins1029@gmail.com" method="POST">
           <input type="text" name="name" placeholder="Ваше имя" required>
           <input type="tel" name="phone" placeholder="Телефон" required>
@@ -102,10 +119,10 @@
       </section>
 
       <section id="contact">
-        <h2>Контакты</h2>
-        <p><strong>Адрес:</strong> Jardi 71, Hospitalet, Barcelona</p>
-        <p><strong>Телефон:</strong> +34 623 270 609</p>
-        <p><strong>Email:</strong> info@automotriz.ru</p>
+        <h2 id="contact-title">Контакты</h2>
+        <p><strong id="address-label">Адрес:</strong> Jardi 71, Hospitalet, Barcelona</p>
+        <p><strong id="phone-label">Телефон:</strong> +34 623 270 609</p>
+        <p><strong id="email-label">Email:</strong> info@automotriz.ru</p>
       </section>
     </main>
 
@@ -113,5 +130,148 @@
       © 2025 СТО Automotriz. Все права защищены.
     </footer>
   </div>
+
+  <script>
+    const translations = {
+      ru: {
+        title: "СТО Automotriz",
+        "nav-about": "О нас",
+        "nav-services": "Услуги",
+        "nav-booking": "Запись",
+        "nav-contact": "Контакты",
+        "about-title": "О нас",
+        "about-text": "СТО Automotriz — надёжный автосервис в Барселоне. Профессионализм, гарантия, качество.",
+        "services-title": "Наши услуги",
+        "services-list": [
+          "Обслуживание и ремонт автомобилей",
+          "Шиномонтаж",
+          "Автодиагностика",
+          "Обслуживание двигателя и коробки передач",
+          "Электрика",
+          "Ходовая"
+        ],
+        "booking-title": "Записаться онлайн",
+        "contact-title": "Контакты",
+        "address-label": "Адрес:",
+        "phone-label": "Телефон:",
+        "email-label": "Email:"
+      },
+      en: {
+        title: "Automotriz Service",
+        "nav-about": "About",
+        "nav-services": "Services",
+        "nav-booking": "Booking",
+        "nav-contact": "Contacts",
+        "about-title": "About Us",
+        "about-text": "Automotriz is a reliable auto service in Barcelona. Professionalism, warranty, quality.",
+        "services-title": "Our Services",
+        "services-list": [
+          "Car maintenance and repair",
+          "Tire fitting",
+          "Car diagnostics",
+          "Engine and transmission service",
+          "Electric system",
+          "Suspension"
+        ],
+        "booking-title": "Book Online",
+        "contact-title": "Contacts",
+        "address-label": "Address:",
+        "phone-label": "Phone:",
+        "email-label": "Email:"
+      },
+      es: {
+        title: "Servicio Automotriz",
+        "nav-about": "Sobre nosotros",
+        "nav-services": "Servicios",
+        "nav-booking": "Reservar",
+        "nav-contact": "Contactos",
+        "about-title": "Sobre nosotros",
+        "about-text": "Automotriz es un servicio confiable en Barcelona. Profesionalismo, garantía y calidad.",
+        "services-title": "Nuestros servicios",
+        "services-list": [
+          "Mantenimiento y reparación de automóviles",
+          "Montaje de neumáticos",
+          "Diagnóstico de vehículos",
+          "Servicio de motor y transmisión",
+          "Sistema eléctrico",
+          "Suspensión"
+        ],
+        "booking-title": "Reservar online",
+        "contact-title": "Contactos",
+        "address-label": "Dirección:",
+        "phone-label": "Teléfono:",
+        "email-label": "Correo:"
+      },
+      ua: {
+        title: "СТО Automotriz",
+        "nav-about": "Про нас",
+        "nav-services": "Послуги",
+        "nav-booking": "Запис",
+        "nav-contact": "Контакти",
+        "about-title": "Про нас",
+        "about-text": "Automotriz — надійний автосервіс у Барселоні. Професіоналізм, гарантія, якість.",
+        "services-title": "Наші послуги",
+        "services-list": [
+          "Обслуговування та ремонт авто",
+          "Шиномонтаж",
+          "Автодіагностика",
+          "Двигун та трансмісія",
+          "Електрика",
+          "Ходова"
+        ],
+        "booking-title": "Запис онлайн",
+        "contact-title": "Контакти",
+        "address-label": "Адреса:",
+        "phone-label": "Телефон:",
+        "email-label": "Email:"
+      },
+      ca: {
+        title: "Servei Automotriz",
+        "nav-about": "Sobre nosaltres",
+        "nav-services": "Serveis",
+        "nav-booking": "Cita",
+        "nav-contact": "Contactes",
+        "about-title": "Sobre nosaltres",
+        "about-text": "Automotriz és un servei de confiança a Barcelona. Professionalitat, garantia i qualitat.",
+        "services-title": "Els nostres serveis",
+        "services-list": [
+          "Manteniment i reparació d'automòbils",
+          "Canvi de pneumàtics",
+          "Diagnòstic del vehicle",
+          "Servei de motor i transmissió",
+          "Sistema elèctric",
+          "Suspensió"
+        ],
+        "booking-title": "Demana cita",
+        "contact-title": "Contactes",
+        "address-label": "Adreça:",
+        "phone-label": "Telèfon:",
+        "email-label": "Correu:"
+      }
+    };
+
+    function setLang(lang) {
+      localStorage.setItem('lang', lang);
+      const t = translations[lang];
+      if (!t) return;
+      for (const id in t) {
+        if (Array.isArray(t[id])) {
+          const ul = document.getElementById(id);
+          if (ul) {
+            ul.innerHTML = t[id].map(li => `<li>${li}</li>`).join('');
+          }
+        } else {
+          const el = document.getElementById(id);
+          if (el) el.textContent = t[id];
+        }
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const saved = localStorage.getItem("lang") || navigator.language.slice(0, 2);
+      const supported = ['ru', 'en', 'es', 'ua', 'ca'];
+      setLang(supported.includes(saved) ? saved : 'ru');
+    });
+  </script>
 </body>
 </html>
