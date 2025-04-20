@@ -3,238 +3,30 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>СТО Automotriz</title>
+  <title id="title">СТО Automotriz</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: sans-serif;
-      background: url('fon-garazh.png') no-repeat center center fixed;
-      background-size: cover;
-      color: white;
-    }
-    .container {
-      background-color: rgba(0, 0, 0, 0.7);
-      max-width: 800px;
-      margin: 20px auto;
-      padding: 20px;
-      border-radius: 12px;
-    }
-    header {
-      display: flex;
-      align-items: center;
-      gap: 15px;
-      flex-wrap: wrap;
-      justify-content: center;
-      text-align: center;
-    }
-    header img {
-      height: 50px;
-    }
-    h1 {
-      font-size: 24px;
-    }
-    nav {
-      text-align: center;
-      margin: 20px 0;
-      flex-wrap: wrap;
-    }
-    nav a {
-      display: inline-block;
-      margin: 5px 10px;
-      color: #66ccff;
-      text-decoration: none;
-    }
-    nav a:hover {
-      text-decoration: underline;
-    }
-    .lang-select {
-      text-align: center;
-      margin: 20px 0;
-    }
-    .lang-select img {
-      width: 32px;
-      height: 32px;
-      margin: 5px 8px;
-      cursor: pointer;
-    }
-    ul {
-      padding-left: 20px;
-    }
-    form input, form textarea, form button {
-      width: 100%;
-      padding: 12px;
-      margin-bottom: 12px;
-      border-radius: 5px;
-      border: none;
-      font-size: 16px;
-    }
-    form button {
-      background-color: #66ccff;
-      color: black;
-      font-weight: bold;
-      cursor: pointer;
-    }
-    .social-icons {
-      text-align: center;
-      margin: 15px 0;
-    }
-    .social-icons a {
-      margin: 0 10px;
-      color: white;
-      font-size: 1.8em;
-      text-decoration: none;
-    }
-    .buttons {
-      text-align: center;
-      margin-top: 15px;
-    }
-    .buttons a {
-      display: inline-block;
-      margin: 10px 5px;
-      padding: 12px 20px;
-      background-color: #66ccff;
-      color: black;
-      border-radius: 5px;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 16px;
-    }
-    iframe {
-      width: 100%;
-      height: 300px;
-      border: none;
-      margin-top: 20px;
-    }
-    .gallery img {
-      width: 100%;
-      margin-bottom: 10px;
-      border-radius: 10px;
-    }
-    .testimonial {
-      background-color: rgba(255, 255, 255, 0.1);
-      padding: 15px;
-      border-radius: 8px;
-      margin-bottom: 10px;
-    }
-    .testimonial strong {
-      display: block;
-      margin-bottom: 5px;
-      color: #66ccff;
-    }
-    footer {
-      text-align: center;
-      margin-top: 30px;
-      font-size: 0.9em;
-      color: #ccc;
-    }
-    @media screen and (max-width: 600px) {
-      h1 { font-size: 20px; }
-      nav a { font-size: 16px; }
-      form input, form textarea, form button { font-size: 14px; }
-      .buttons a { font-size: 14px; padding: 10px 15px; }
-    }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <div class="lang-select">
-      <img src="https://flagcdn.com/ru.svg" alt="Русский" onclick="setLang('ru')">
-      <img src="https://flagcdn.com/gb.svg" alt="English" onclick="setLang('en')">
-      <img src="https://flagcdn.com/es.svg" alt="Español" onclick="setLang('es')">
-      <img src="https://flagcdn.com/ua.svg" alt="Українська" onclick="setLang('ua')">
-      <img src="Estelada_blava.svg.png" alt="Català" onclick="setLang('ca')">
-    </div>
-    <header>
-      <img src="fon-garazh.png" alt="Логотип">
-      <h1 id="title">СТО Automotriz</h1>
-    </header>
-
-    <nav>
-      <a href="#about" id="nav-about">О нас</a>
-      <a href="#services" id="nav-services">Услуги</a>
-      <a href="#booking" id="nav-booking">Запись</a>
-      <a href="#contact" id="nav-contact">Контакты</a>
-    </nav>
-
-    <main>
-      <section id="about">
-        <h2 id="about-title">О нас</h2>
-        <p id="about-text">СТО Automotriz — надёжный автосервис в Барселоне. Профессионализм, гарантия, качество.</p>
-      </section>
-
-      <section id="services">
-        <h2 id="services-title">Наши услуги</h2>
-        <ul id="services-list">
-          <li>Обслуживание и ремонт автомобилей</li>
-          <li>Шиномонтаж</li>
-          <li>Автодиагностика</li>
-          <li>Обслуживание двигателя и коробки передач</li>
-          <li>Электрика</li>
-          <li>Ходовая</li>
-        </ul>
-      </section>
-
-      <section id="gallery">
-        <h2>Галерея</h2>
-        <div class="gallery">
-          <img src="https://via.placeholder.com/800x400?text=Фото+1" alt="Фото 1">
-          <img src="https://via.placeholder.com/800x400?text=Фото+2" alt="Фото 2">
-        </div>
-      </section>
-
-      <section id="testimonials">
-        <h2>Отзывы клиентов</h2>
-        <div class="testimonial">
-          <strong>Анна:</strong>
-          Отличный сервис! Всё быстро и качественно.
-        </div>
-        <div class="testimonial">
-          <strong>John:</strong>
-          Professional staff and fair pricing. Highly recommend!
-        </div>
-      </section>
-
-      <section id="booking">
-        <h2 id="booking-title">Записаться онлайн</h2>
-        <form action="https://formsubmit.co/merrypopins1029@gmail.com" method="POST">
-          <input type="text" name="name" placeholder="Ваше имя" required>
-          <input type="tel" name="phone" placeholder="Телефон" required>
-          <input type="date" name="date" required>
-          <input type="time" name="time" required>
-          <textarea name="comment" placeholder="Комментарий"></textarea>
-          <button type="submit">Отправить</button>
-        </form>
-        <div class="buttons">
-          <a href="https://t.me/yourtelegram" target="_blank">📩 Записаться в Telegram</a>
-        </div>
-      </section>
-
-      <section id="contact">
-        <h2 id="contact-title">Контакты</h2>
-        <p><strong id="address-label">Адрес:</strong> Jardi 71, Hospitalet, Barcelona</p>
-        <p><strong id="phone-label">Телефон:</strong> <a href="tel:+34623270609">+34 623 270 609</a></p>
-        <p><strong id="email-label">Email:</strong> <a href="mailto:info@automotriz.ru">info@automotriz.ru</a></p>
-
-        <div class="buttons">
-          <a href="tel:+34623270609">📞 Позвонить</a>
-          <a href="#booking">✍️ Написать</a>
-        </div>
-
-        <div class="social-icons">
-          <a href="#" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-          <a href="#" title="Telegram"><i class="fab fa-telegram"></i></a>
-          <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
-        </div>
-
-        <iframe src="https://www.google.com/maps?q=Jardi+71,+Hospitalet,+Barcelona&output=embed"></iframe>
-      </section>
-    </main>
-
-    <footer>
-      © 2025 СТО Automotriz. Все права защищены.
-    </footer>
-  </div>
-</body>
-</html>
+  <script>
+    const translations = {
+      ru: {
+        title: "СТО Automotriz",
+        "nav-about": "О нас",
+        "nav-services": "Услуги",
+        "nav-booking": "Запись",
+        "nav-contact": "Контакты",
+        "about-title": "О нас",
+        "about-text": "СТО Automotriz — надёжный автосервис в Барселоне. Профессионализм, гарантия, качество.",
+        "services-title": "Наши услуги",
+        "services-list": [
+          "Обслуживание и ремонт автомобилей",
+          "Шиномонтаж",
+          "Автодиагностика",
+          "Обслуживание двигателя и коробки передач",
+          "Электрика",
+          "Ходовая"
+        ],
+        "booking-title": "Записаться онлайн",
+        "contact-title": "Контакты",
+        "address-label": "Адрес:",
+        "phone-label": "Телефон:",
+        "email-label": "Email:",
+        "
