@@ -80,7 +80,7 @@
       align-items: center;
       gap: 10px;
     }
-    #booking input, #booking textarea, #booking button, #booking select {
+    #booking input, #booking textarea, #booking button {
       width: 80%;
       padding: 10px;
       border: none;
@@ -93,40 +93,15 @@
       font-weight: bold;
       cursor: pointer;
     }
-    .external-links {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      margin-top: 10px;
-    }
-    .external-links a {
-      text-decoration: none;
-      font-weight: bold;
-      color: #66ccff;
-    }
   </style>
 </head>
 <body>
-<div class="container">
-  <!-- ... существующий контент ... -->
-
-  <section id="booking">
-    <h2 id="booking-title">Записаться онлайн</h2>
-    <form>
-      <input id="placeholder-name" placeholder="Ваше имя">
-      <input id="placeholder-phone" placeholder="Телефон">
-      <input type="date" id="date">
-      <input type="time" id="time">
-      <textarea id="placeholder-comment" placeholder="Комментарий"></textarea>
-      <button type="submit" id="placeholder-submit">Отправить</button>
-    </form>
-    <div class="external-links">
-      <a href="https://t.me/yourtelegram" target="_blank"><i class="fab fa-telegram"></i> Telegram</a>
-      <a href="https://wa.me/34623270609" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-    </div>
-  </section>
-
-  <!-- ... остальной контент ... -->
-</div>
-</body>
-</html>
+<section id="booking">
+  <h2 id="booking-title">Записаться онлайн</h2>
+  <form>
+    <input id="placeholder-name" placeholder="Ваше имя">
+    <input id="placeholder-phone" placeholder="Телефон">
+    <textarea id="placeholder-comment" placeholder="Комментарий"></textarea>
+    <button type="submit" id="placeholder-submit">Отправить</button>
+  </form>
+</section>
