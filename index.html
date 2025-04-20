@@ -9,24 +9,18 @@
       margin: 0;
       padding: 0;
       font-family: sans-serif;
-      background: url('https://raw.githubusercontent.com/voalea/automotriz-site/main/fon-garazh.png') no-repeat center center fixed;
+      background: url('fon-garazh.png') no-repeat center center fixed;
       background-size: cover;
       color: white;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
     }
     .container {
       background-color: rgba(0, 0, 0, 0.7);
-      padding: 40px;
-      border-radius: 12px;
       max-width: 800px;
-      width: 90%;
-      box-shadow: 0 0 10px rgba(0,0,0,0.5);
+      margin: 40px auto;
+      padding: 30px;
+      border-radius: 12px;
     }
     h1, h2 {
-      color: #fff;
       text-align: center;
     }
     nav {
@@ -34,8 +28,8 @@
       margin-bottom: 20px;
     }
     nav a {
-      color: #66ccff;
       margin: 0 10px;
+      color: #66ccff;
       text-decoration: none;
     }
     nav a:hover {
@@ -48,14 +42,76 @@
       width: 100%;
       padding: 10px;
       margin-bottom: 10px;
-      border: none;
       border-radius: 5px;
+      border: none;
     }
     form button {
       background-color: #66ccff;
-      color: #000;
+      color: black;
       font-weight: bold;
       cursor: pointer;
     }
     footer {
-      text
+      text-align: center;
+      margin-top: 30px;
+      font-size: 0.9em;
+      color: #ccc;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>СТО Automotriz</h1>
+      <nav>
+        <a href="#about">О нас</a>
+        <a href="#services">Услуги</a>
+        <a href="#booking">Запись</a>
+        <a href="#contact">Контакты</a>
+      </nav>
+    </header>
+
+    <main>
+      <section id="about">
+        <h2>О нас</h2>
+        <p>СТО Automotriz — надёжный автосервис в Барселоне. Профессионализм, гарантия, качество.</p>
+      </section>
+
+      <section id="services">
+        <h2>Наши услуги</h2>
+        <ul>
+          <li>Обслуживание и ремонт автомобилей</li>
+          <li>Шиномонтаж</li>
+          <li>Автодиагностика</li>
+          <li>Обслуживание двигателя и коробки передач</li>
+          <li>Электрика</li>
+          <li>Ходовая</li>
+        </ul>
+      </section>
+
+      <section id="booking">
+        <h2>Записаться онлайн</h2>
+        <form action="https://formsubmit.co/merrypopins1029@gmail.com" method="POST">
+          <input type="text" name="name" placeholder="Ваше имя" required>
+          <input type="tel" name="phone" placeholder="Телефон" required>
+          <input type="date" name="date" required>
+          <input type="time" name="time" required>
+          <textarea name="comment" placeholder="Комментарий"></textarea>
+          <button type="submit">Отправить</button>
+        </form>
+      </section>
+
+      <section id="contact">
+        <h2>Контакты</h2>
+        <p><strong>Адрес:</strong> Jardi 71, Hospitalet, Barcelona</p>
+        <p><strong>Телефон:</strong> +34 623 270 609</p>
+        <p><strong>Email:</strong> info@automotriz.ru</p>
+      </section>
+    </main>
+
+    <footer>
+      © 2025 СТО Automotriz. Все права защищены.
+    </footer>
+  </div>
+</body>
+</html>
