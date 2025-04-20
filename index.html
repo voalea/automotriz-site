@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title id="title">СТО Automotriz</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <style>
@@ -42,9 +42,6 @@
     header img {
       height: 50px;
     }
-    h1 {
-      font-size: 24px;
-    }
     nav {
       text-align: center;
       margin: 20px 0;
@@ -68,19 +65,15 @@
       border: none;
       margin-top: 20px;
     }
-    footer {
-      text-align: center;
-      margin-top: 30px;
-      font-size: 0.9em;
-      color: #ccc;
-    }
     #booking form {
       display: flex;
       flex-direction: column;
       align-items: center;
       gap: 10px;
     }
-    #booking input, #booking textarea, #booking button {
+    #booking input,
+    #booking textarea,
+    #booking button {
       width: 80%;
       padding: 10px;
       border: none;
@@ -93,15 +86,28 @@
       font-weight: bold;
       cursor: pointer;
     }
+    footer {
+      text-align: center;
+      margin-top: 30px;
+      font-size: 0.9em;
+      color: #ccc;
+    }
   </style>
 </head>
 <body>
-<section id="booking">
-  <h2 id="booking-title">Записаться онлайн</h2>
-  <form>
-    <input id="placeholder-name" placeholder="Ваше имя">
-    <input id="placeholder-phone" placeholder="Телефон">
-    <textarea id="placeholder-comment" placeholder="Комментарий"></textarea>
-    <button type="submit" id="placeholder-submit">Отправить</button>
-  </form>
-</section>
+  <div class="container">
+    <div class="lang-select">
+      <img src="https://flagcdn.com/ru.svg" alt="Русский" onclick="setLang('ru')" />
+      <img src="https://flagcdn.com/gb.svg" alt="English" onclick="setLang('en')" />
+      <img src="https://flagcdn.com/es.svg" alt="Español" onclick="setLang('es')" />
+      <img src="https://flagcdn.com/ua.svg" alt="Українська" onclick="setLang('ua')" />
+      <img src="Estelada_blava.svg.png" alt="Català" onclick="setLang('ca')" />
+    </div>
+
+    <header>
+      <img src="fon-garazh.png" alt="Логотип" />
+      <h1 id="title">СТО Automotriz</h1>
+    </header>
+
+    <nav>
+      <a href="#about" id="nav-about">О нас</a
