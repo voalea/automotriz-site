@@ -244,4 +244,30 @@
     };
 
     function setLang(lang) {
-      localStorage.setItem('lang
+      localStorage.setItem('lang', lang);
+      const t = translations[lang];
+      if (!t) return;
+      for (const id in t) {
+        const el = document.getElementById(id);
+        if (el) {
+          if (id.startsWith("placeholder-")) {
+            if (el.tagName === "BUTTON") el.textContent = t[id];
+            else el.placeholder = t[id];
+          } else if (Array.isArray(t[id])) {
+            const ul = document.getElementById(id);
+            if (ul) ul.innerHTML = t[id].map(li => `<li>${li}</li>`).join('');
+          } else {
+            el.textContent = t[id];
+          }
+        }
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const saved = localStorage.getItem("lang") || navigator.language.slice(0, 2);
+      const supported = ['ru', 'en', 'es', 'ua', 'ca'];
+      setLang(supported.includes(saved) ? saved : 'ru');
+    });
+  </script>
+</body>
+</html>
