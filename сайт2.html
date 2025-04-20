@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="ru" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>СТО Automotriz</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'media'
+    }
+  </script>
+  <style>
+    .animate-fade-in {
+      opacity: 1 !important;
+      transition: opacity 1s ease-in-out;
+    }
+    .opacity-0 {
+      opacity: 0;
+    }
+  </style>
+</head>
+<body class="bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-100 font-sans">
+
+  <!-- Header -->
+  <header class="bg-white dark:bg-gray-800 border-b dark:border-gray-700 sticky top-0 z-50">
+    <div class="container mx-auto flex justify-between items-center p-4">
+      <div class="flex items-center gap-3">
+        <img src="Безымянный.png" alt="Логотип Automotriz" class="h-12 w-auto" />
+        <span class="text-xl font-bold hidden sm:inline">СТО Automotriz</span>
+      </div>
+      <nav class="flex items-center gap-4">
+        <a href="#about" class="hover:text-yellow-500" data-i18n="about">О нас</a>
+        <a href="#services" class="hover:text-yellow-500" data-i18n="services">Услуги</a>
+        <a href="#booking" class="hover:text-yellow-500" data-i18n="booking">Запись</a>
+        <a href="#contact" class="hover:text-yellow-500" data-i18n="contacts">Контакты</a>
+        <select id="langSwitcher" class="bg-transparent text-sm border border-gray-400 rounded px-2 py-1">
+          <option value="ru">RU</option>
+          <option value="en">EN</option>
+          <option value="es">ES</option>
+          <option value="ua">UA</option>
+        </select>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Sections (with translatable texts) -->
+  <section id="about" class="py-16 text-center opacity-0">
+    <div class="container mx-auto">
+      <h2 class="text-3xl font-bold mb-4" data-i18n="about_title">О нас</h2>
+      <p class="max-w-2xl mx-auto text-lg" data-i18n="about_text">
+        СТО "Automotriz" — ваш надежный партнёр в ремонте и обслуживании авто. Более 10 лет качества и заботы о клиентах.
+      </p>
+    </div>
+  </section>
+
+  <section id="services" class="py-16 bg-gray-50 dark:bg-gray-800 text-center opacity-0">
+    <div class="container mx-auto">
+      <h2 class="text-3xl font-bold mb-10" data-i18n="services_title">Наши услуги</h2>
+      <div class="grid md:grid-cols-3 gap-6" id="services-list">
+        <!-- Услуги будут загружены через JS -->
+      </div>
+    </div>
+  </section>
+
+  <section id="booking" class="py-16 text-center opacity-0">
+    <div class="container mx-auto">
+      <h2 class="text-3xl font-bold mb-6" data-i18n="booking_title">Онлайн-запись</h2>
+      <form action="https://formsubmit.co/merrypopins1029@gmail.com" method="POST" class="max-w-xl mx-auto space-y-4 text-left">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="text" name="name" class="w-full p-3 border rounded" required placeholder="Ваше имя" data-i18n-placeholder="name" />
+        <input type="tel" name="phone" class="w-full p-3 border rounded" required placeholder="Телефон" data-i18n-placeholder="phone" />
+        <input type="date" name="date" class="w-full p-3 border rounded" required />
+        <input type="time" name="time" class="w-full p-3 border rounded" required />
+        <textarea name="comment" class="w-full p-3 border rounded" rows="4" placeholder="Комментарий (необязательно)" data-i18n-placeholder="comment"></textarea>
+        <button type="submit" class="bg-blue-600 text-white px-6 py-3 rounded hover:bg-blue-700 w-full" data-i18n="submit">Записаться</button>
+      </form>
+    </div>
+  </section>
+
+  <section id="contact" class="py-16 bg-gray-100 dark:bg-gray-800 text-center opacity-0">
+    <div class="container mx-auto">
+      <h2 class="text-3xl font-bold mb-6" data-i18n="contacts_title">Контакты</h2>
+      <div class="grid md:grid-cols-2 gap-6 items-start">
+        <div class="text-left space-y-2">
+          <p><strong>📍 <span data-i18n="address_label">Адрес:</span></strong> Es calle Jardi 71, Hospitalet, Barcelona</p>
+          <p><strong>📞 <span data-i18n="phone_label">Телефон:</span></strong> +34 623 270 609</p>
+          <p><strong>📧 Email:</strong> info@automotriz.ru</p>
+          <p><strong>⏰ <span data-i18n="hours">Время работы:</span></strong> Пн–Сб: 9:00–19:00</p>
+        </div>
+        <iframe class="rounded-lg w-full h-64" loading="lazy" allowfullscreen
+          src="https://www.google.com/maps/embed/v1/place?q=Es+calle+Jardi+71+Hospitalet+Barcelona&key=AIzaSyC9u...REPLACE_THIS">
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-white dark:bg-gray-900 text-center text-sm text-gray-500 dark:text-gray-400 py-4">
+    © 2025 СТО "Automotriz". Все права защищены.
+  </footer>
+
+  <script>
+    const translations = {
+      ru: {
+        about: "О нас",
+        about_title: "О нас",
+        about_text: "СТО \"Automotriz\" — ваш надежный партнёр в ремонте и обслуживании авто. Более 10 лет качества и заботы о клиентах.",
+        services: "Услуги",
+        services_title: "Наши услуги",
+        booking: "Запись",
+        booking_title: "Онлайн-запись",
+        contacts: "Контакты",
+        contacts_title: "Контакты",
+        address_label: "Адрес:",
+        phone_label: "Телефон:",
+        hours: "Время работы:",
+        submit: "Записаться",
+        name: "Ваше имя",
+        phone: "Телефон",
+        comment: "Комментарий (необязательно)",
+        services_list: [
+          ["Обслуживание и ремонт автомобилей", "Плановое и экстренное техническое обслуживание всех типов авто."],
+          ["Шиномонтаж", "Сезонная замена, балансировка и ремонт шин."],
+          ["Автодиагностика", "Диагностика электроники и всех систем автомобиля."],
+          ["Обслуживание двигателя и коробки передач", "Ремонт и обслуживание ДВС, МКПП и АКПП."],
+          ["Электрика", "Ремонт стартеров, генераторов, освещения и проводки."],
+          ["Ходовая", "Ремонт подвески, амортизаторов и тормозной системы."]
+        ]
+      },
+      en: {
+        about: "About",
+        about_title: "About Us",
+        about_text: "Automotriz is your reliable partner in car repair and maintenance. Over 10 years of quality and care.",
+        services: "Services",
+        services_title: "Our Services",
+        booking: "Booking",
+        booking_title: "Online Booking",
+        contacts: "Contacts",
+        contacts_title: "Contacts",
+        address_label: "Address:",
+        phone_label: "Phone:",
+        hours: "Working hours:",
+        submit: "Book Now",
+        name: "Your name",
+        phone: "Phone",
+        comment: "Comment (optional)",
+        services_list: [
+          ["Car Maintenance & Repair", "Scheduled and emergency maintenance for all vehicle types."],
+          ["Tire Service", "Seasonal change, balancing and tire repair."],
+          ["Car Diagnostics", "Electronics and full system diagnostics."],
+          ["Engine & Transmission", "Repair and service for engine, manual and automatic gearboxes."],
+          ["Electrical", "Repair of starters, alternators, lights and wiring."],
+          ["Suspension", "Suspension, shock absorber and brake system repair."]
+        ]
+      },
+      es: {
+        about: "Sobre nosotros",
+        about_title: "Sobre nosotros",
+        about_text: "Automotriz es su socio confiable para la reparación y mantenimiento de vehículos. Más de 10 años de calidad y atención.",
+        services: "Servicios",
+        services_title: "Nuestros servicios",
+        booking: "Cita",
+        booking_title: "Reservar online",
+        contacts: "Contacto",
+        contacts_title: "Contacto",
+        address_label: "Dirección:",
+        phone_label: "Teléfono:",
+        hours: "Horario:",
+        submit: "Reservar",
+        name: "Tu nombre",
+        phone: "Teléfono",
+        comment: "Comentario (opcional)",
+        services_list: [
+          ["Mantenimiento y reparación", "Mantenimiento programado y de emergencia para todos los vehículos."],
+          ["Servicio de neumáticos", "Cambio de temporada, balanceo y reparación de neumáticos."],
+          ["Diagnóstico", "Diagnóstico electrónico y de todos los sistemas del automóvil."],
+          ["Motor y transmisión", "Reparación y mantenimiento de motores y transmisiones."],
+          ["Electricidad", "Reparación de arranques, alternadores, luces y cableado."],
+          ["Suspensión", "Reparación de suspensión, amortiguadores y frenos."]
+        ]
+      },
+      ua: {
+        about: "Про нас",
+        about_title: "Про нас",
+        about_text: "СТО Automotriz — ваш надійний партнер у ремонті та обслуговуванні авто. Більше 10 років якості та турботи.",
+        services: "Послуги",
+        services_title: "Наші послуги",
+        booking: "Запис",
+        booking_title: "Онлайн-запис",
+        contacts: "Контакти",
+        contacts_title: "Контакти",
+        address_label: "Адреса:",
+        phone_label: "Телефон:",
+        hours: "Години роботи:",
+        submit: "Записатися",
+        name: "Ваше ім'я",
+        phone: "Телефон",
+        comment: "Коментар (необов'язково)",
+        services_list: [
+          ["Обслуговування та ремонт авто", "Планове й термінове технічне обслуговування будь-яких авто."],
+          ["Шиномонтаж", "Сезонна заміна, балансування та ремонт шин."],
+          ["Автодіагностика", "Діагностика електроніки та всіх систем авто."],
+          ["Двигун і коробка", "Ремонт та обслуговування ДВЗ, МКПП, АКПП."],
+          ["Електрика", "Ремонт стартерів, генераторів, освітлення та проводки."],
+          ["Ходова", "Ремонт підвіски, амортизаторів і гальм."]
+        ]
+      }
+    };
+
+    function setLang(lang) {
+      localStorage.setItem('lang', lang);
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.dataset.i18n;
+        if (translations[lang][key]) el.textContent = translations[lang][key];
+      });
+      document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+        const key = el.dataset.i18nPlaceholder;
+        if (translations[lang][key]) el.placeholder = translations[lang][key];
+      });
+
+      const serviceList = document.getElementById('services-list');
+      serviceList.innerHTML = '';
+      translations[lang].services_list.forEach(([title, desc]) => {
+        const card = document.createElement('div');
+        card.className = "bg-white dark:bg-gray-700 p-6 rounded-xl shadow hover:shadow-lg";
+        card.innerHTML = `<h3 class="text-xl font-semibold mb-2">${title}</h3><p>${desc}</p>`;
+        serviceList.appendChild(card);
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const lang = localStorage.getItem('lang') || 'ru';
+      document.getElementById('langSwitcher').value = lang;
+      setLang(lang);
+
+      document.getElementById('langSwitcher').addEventListener('change', (e) => {
+        setLang(e.target.value);
+      });
+
+      const sections = document.querySelectorAll('section');
+      const options = { threshold: 0.1 };
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate-fade-in');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, options);
+      sections.forEach(section => {
+        section.classList.add('opacity-0');
+        observer.observe(section);
+      });
+    });
+  </script>
+</body>
+</html>
