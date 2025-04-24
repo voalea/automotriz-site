@@ -3,63 +3,100 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>СТО Automotriz</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <title id="title">СТО Automotriz</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background: url('fon-garazh.png') no-repeat center center fixed;
+      background-size: cover;
+      color: white;
+    }
+    .container {
+      background-color: rgba(0, 0, 0, 0.75);
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 30px;
+      border-radius: 12px;
+    }
+    header, nav, footer {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    nav a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: #66ccff;
+    }
+    h1, h2 {
+      text-align: center;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+    input, textarea, button {
+      width: 80%;
+      padding: 10px;
+      border: none;
+      border-radius: 6px;
+      font-size: 1em;
+    }
+    button {
+      background-color: #66ccff;
+      color: black;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    iframe {
+      width: 100%;
+      height: 300px;
+      border: none;
+    }
+  </style>
 </head>
-<body class="bg-white text-gray-900">
-  <header class="p-4 border-b flex justify-between items-center">
-    <div class="flex items-center gap-4">
-      <img src="Безымянный.png" alt="Логотип Automotriz" class="h-12">
-      <h1 class="text-2xl font-bold">СТО Automotriz</h1>
-    </div>
-    <nav class="flex gap-4">
-      <a href="#about">О нас</a>
-      <a href="#services">Услуги</a>
-      <a href="#booking">Запись</a>
-      <a href="#contact">Контакты</a>
+<body>
+  <div class="container">
+    <header>
+      <h1 id="title">СТО Automotriz</h1>
+    </header>
+    <nav>
+      <a href="#about" id="nav-about">О нас</a>
+      <a href="#services" id="nav-services">Услуги</a>
+      <a href="#booking" id="nav-booking">Запись</a>
+      <a href="#contact" id="nav-contact">Контакты</a>
     </nav>
-  </header>
-
-  <main class="p-8">
-    <section id="about" class="mb-12">
-      <h2 class="text-3xl font-semibold mb-2">О нас</h2>
-      <p>СТО Automotriz — надёжный сервис по ремонту авто в Барселоне. Профессионализм, гарантия, качество.</p>
+    <section id="about">
+      <h2 id="about-title">О нас</h2>
+      <p id="about-text">СТО Automotriz — надёжный автосервис в Барселоне.</p>
     </section>
-
-    <section id="services" class="mb-12">
-      <h2 class="text-3xl font-semibold mb-2">Наши услуги</h2>
-      <ul class="list-disc pl-6">
-        <li>Обслуживание и ремонт автомобилей</li>
+    <section id="services">
+      <h2 id="services-title">Наши услуги</h2>
+      <ul id="services-list">
+        <li>Ремонт автомобилей</li>
         <li>Шиномонтаж</li>
-        <li>Автодиагностика</li>
-        <li>Обслуживание двигателя и коробки передач</li>
-        <li>Электрика</li>
-        <li>Ходовая</li>
+        <li>Диагностика</li>
       </ul>
     </section>
-
-    <section id="booking" class="mb-12">
-      <h2 class="text-3xl font-semibold mb-2">Записаться онлайн</h2>
-      <form action="https://formsubmit.co/merrypopins1029@gmail.com" method="POST" class="grid gap-4 max-w-xl">
-        <input type="text" name="name" placeholder="Ваше имя" class="border p-2" required>
-        <input type="tel" name="phone" placeholder="Телефон" class="border p-2" required>
-        <input type="date" name="date" class="border p-2" required>
-        <input type="time" name="time" class="border p-2" required>
-        <textarea name="comment" placeholder="Комментарий" class="border p-2"></textarea>
-        <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded">Отправить</button>
+    <section id="booking">
+      <h2 id="booking-title">Записаться онлайн</h2>
+      <form>
+        <input id="placeholder-name" placeholder="Ваше имя" />
+        <input id="placeholder-phone" placeholder="Телефон" />
+        <textarea id="placeholder-comment" placeholder="Комментарий"></textarea>
+        <button id="placeholder-submit">Отправить</button>
       </form>
     </section>
-
     <section id="contact">
-      <h2 class="text-3xl font-semibold mb-2">Контакты</h2>
-      <p><strong>Адрес:</strong> Es calle Jardi 71, Hospitalet, Barcelona</p>
-      <p><strong>Телефон:</strong> +34 623 270 609</p>
-      <p><strong>Email:</strong> info@automotriz.ru</p>
+      <h2 id="contact-title">Контакты</h2>
+      <p><strong id="address-label">Адрес:</strong> <span id="address-text">Calle Jardi 71, Hospitalet, Barcelona</span></p>
+      <p><strong id="phone-label">Телефон:</strong> <a href="tel:+34623270609">+34 623 270 609</a></p>
+      <p><strong id="email-label">Email:</strong> <a href="mailto:merrypopins1029@gmail.com">merrypopins1029@gmail.com</a></p>
+      <iframe src="https://www.google.com/maps?q=Calle+Jardi+71,+Hospitalet,+Barcelona&output=embed"></iframe>
     </section>
-  </main>
-
-  <footer class="p-4 text-center text-sm text-gray-500 border-t">
-    © 2025 СТО Automotriz. Все права защищены.
-  </footer>
+    <footer>© 2025 СТО Automotriz</footer>
+  </div>
 </body>
 </html>
