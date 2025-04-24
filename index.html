@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title id="title">СТО Automotriz</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background: url('fon-garazh.png') no-repeat center center fixed;
+      background-size: cover;
+      color: white;
+    }
+    .container {
+      background-color: rgba(0, 0, 0, 0.75);
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 30px;
+      border-radius: 12px;
+    }
+    header, nav, footer, .lang-select {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    nav a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: #66ccff;
+    }
+    h1, h2 {
+      text-align: center;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+    input, textarea, button {
+      width: 80%;
+      padding: 10px;
+      border: none;
+      border-radius: 6px;
+      font-size: 1em;
+    }
+    button {
+      background-color: #66ccff;
+      color: black;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    iframe {
+      width: 100%;
+      height: 300px;
+      border: none;
+    }
+    .lang-select img {
+      width: 32px;
+      margin: 0 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="lang-select">
+      <img src="https://flagcdn.com/ru.svg" onclick="setLang('ru')" alt="Русский">
+      <img src="https://flagcdn.com/gb.svg" onclick="setLang('en')" alt="English">
+      <img src="https://flagcdn.com/es.svg" onclick="setLang('es')" alt="Español">
+      <img src="https://flagcdn.com/ua.svg" onclick="setLang('ua')" alt="Українська">
+      <img src="Estelada_blava.svg.png" onclick="setLang('ca')" alt="Català">
+    </div>
+    <header>
+      <h1 id="title">СТО Automotriz</h1>
+    </header>
+    <nav>
+      <a href="#about" id="nav-about">О нас</a>
+      <a href="#services" id="nav-services">Услуги</a>
+      <a href="#booking" id="nav-booking">Запись</a>
+      <a href="#contact" id="nav-contact">Контакты</a>
+    </nav>
+    <section id="about">
+      <h2 id="about-title">О нас</h2>
+      <p id="about-text">СТО Automotriz — надёжный автосервис в Барселоне.</p>
+    </section>
+    <section id="services">
+      <h2 id="services-title">Наши услуги</h2>
+      <ul id="services-list">
+        <li id="s1">Подготовка к ITV</li>
+        <li id="s2">Ремонт подвески и двигателя</li>
+        <li id="s3">Электрика</li>
+        <li id="s4">Обслуживание коробки передач</li>
+        <li id="s5">Компьютерная диагностика авто</li>
+        <li id="s6">Шиномонтаж</li>
+      </ul>
+    </section>
+    <section id="booking">
+      <h2 id="booking-title">Записаться онлайн</h2>
+      <form action="https://formsubmit.co/merrypopins1029@gmail.com" method="POST">
+        <input id="placeholder-name" placeholder="Ваше имя" />
+        <input id="placeholder-phone" placeholder="Телефон" />
+        <textarea id="placeholder-comment" placeholder="Комментарий"></textarea>
+        <button id="placeholder-submit">Отправить</button>
+      </form>
+    </section>
+    <section id="contact">
+      <h2 id="contact-title">Контакты</h2>
+      <p><strong id="address-label">Адрес:</strong> <span id="address-text">Calle Jardi 71, Hospitalet, Barcelona</span></p>
+      <p><strong id="phone-label">Телефон:</strong> <a href="tel:+34623270609">+34 623 270 609</a></p>
+      <p><strong id="email-label">Email:</strong> <a href="mailto:merrypopins1029@gmail.com">merrypopins1029@gmail.com</a></p>
+      <iframe src="https://www.google.com/maps?q=Calle+Jardi+71,+Hospitalet,+Barcelona&output=embed"></iframe>
+    </section>
+    <footer>© 2025 СТО Automotriz</footer>
+  </div>
+
+<script>
+const translations = {
+  ru: {
+    title: "СТО Automotriz", "nav-about": "О нас", "nav-services": "Услуги", "nav-booking": "Запись", "nav-contact": "Контакты",
+    "about-title": "О нас", "about-text": "СТО Automotriz — надёжный автосервис в Барселоне.",
+    "services-title": "Наши услуги", "s1": "Подготовка к ITV", "s2": "Ремонт подвески и двигателя", "s3": "Электрика", "s4": "Обслуживание коробки передач", "s5": "Компьютерная диагностика авто", "s6": "Шиномонтаж",
+    "booking-title": "Записаться онлайн", "contact-title": "Контакты", "address-label": "Адрес:", "address-text": "Calle Jardi 71, Hospitalet, Barcelona",
+    "phone-label": "Телефон:", "email-label": "Email:", "placeholder-name": "Ваше имя", "placeholder-phone": "Телефон", "placeholder-comment": "Комментарий", "placeholder-submit": "Отправить"
+  },
+  en: {
+    title: "Automotive Service", "nav-about": "About", "nav-services": "Services", "nav-booking": "Booking", "nav-contact": "Contact",
+    "about-title": "About", "about-text": "Automotriz is a reliable car service in Barcelona.",
+    "services-title": "Our Services", "s1": "ITV Preparation", "s2": "Suspension and engine repair", "s3": "Electrical", "s4": "Transmission service", "s5": "Computer diagnostics", "s6": "Tire service",
+    "booking-title": "Book Online", "contact-title": "Contact", "address-label": "Address:", "address-text": "Calle Jardi 71, Hospitalet, Barcelona",
+    "phone-label": "Phone:", "email-label": "Email:", "placeholder-name": "Your name", "placeholder-phone": "Phone", "placeholder-comment": "Comment", "placeholder-submit": "Send"
+  },
+  es: {
+    title: "Servicio Automotriz", "nav-about": "Sobre nosotros", "nav-services": "Servicios", "nav-booking": "Reservar", "nav-contact": "Contacto",
+    "about-title": "Sobre nosotros", "about-text": "Automotriz es un servicio confiable en Barcelona.",
+    "services-title": "Nuestros servicios", "s1": "Preparación para ITV", "s2": "Reparación de suspensión y motor", "s3": "Electricidad", "s4": "Servicio de transmisión", "s5": "Diagnóstico del coche", "s6": "Montaje de neumáticos",
+    "booking-title": "Reservar en línea", "contact-title": "Contacto", "address-label": "Dirección:", "address-text": "Calle Jardi 71, Hospitalet, Barcelona",
+    "phone-label": "Teléfono:", "email-label": "Correo electrónico:", "placeholder-name": "Tu nombre", "placeholder-phone": "Teléfono", "placeholder-comment": "Comentario", "placeholder-submit": "Enviar"
+  },
+  ua: {
+    title: "СТО Automotriz", "nav-about": "Про нас", "nav-services": "Послуги", "nav-booking": "Запис", "nav-contact": "Контакти",
+    "about-title": "Про нас", "about-text": "СТО Automotriz — надійний автосервіс у Барселоні.",
+    "services-title": "Наші послуги", "s1": "Підготовка до ITV", "s2": "Ремонт підвіски та двигуна", "s3": "Електрика", "s4": "Обслуговування коробки передач", "s5": "Комп’ютерна діагностика", "s6": "Шиномонтаж",
+    "booking-title": "Запис онлайн", "contact-title": "Контакти", "address-label": "Адреса:", "address-text": "Calle Jardi 71, Hospitalet, Barcelona",
+    "phone-label": "Телефон:", "email-label": "Пошта:", "placeholder-name": "Ваше ім’я", "placeholder-phone": "Телефон", "placeholder-comment": "Коментар", "placeholder-submit": "Надіслати"
+  },
+  ca: {
+    title: "Servei Automotriz", "nav-about": "Sobre nosaltres", "nav-services": "Serveis", "nav-booking": "Cita", "nav-contact": "Contacte",
+    "about-title": "Sobre nosaltres", "about-text": "Automotriz és un servei de confiança a Barcelona.",
+    "services-title": "Els nostres serveis", "s1": "Preparació per a ITV", "s2": "Reparació de suspensió i motor", "s3": "Electricitat", "s4": "Servei de transmissió", "s5": "Diagnòstic de vehicles", "s6": "Canvi de pneumàtics",
+    "booking-title": "Reserva online", "contact-title": "Contacte", "address-label": "Adreça:", "address-text": "Calle Jardi 71, Hospitalet, Barcelona",
+    "phone-label": "Telèfon:", "email-label": "Correu electrònic:", "placeholder-name": "Nom", "placeholder-phone": "Telèfon", "placeholder-comment": "Comentari", "placeholder-submit": "Enviar"
+  }
+};
+function setLang(lang) {
+  localStorage.setItem('lang', lang);
+  const t = translations[lang];
+  if (!t) return;
+  for (const id in t) {
+    const el = document.getElementById(id);
+    if (!el) continue;
+    if (id.startsWith('placeholder-')) {
+      if (el.tagName === 'BUTTON') el.textContent = t[id];
+      else el.placeholder = t[id];
+    } else {
+      el.textContent = t[id];
+    }
+  }
+}
+document.addEventListener('DOMContentLoaded', () => {
+  const lang = localStorage.getItem('lang') || 'ru';
+  setLang(lang);
+});
+</script>
+</body>
+</html>
