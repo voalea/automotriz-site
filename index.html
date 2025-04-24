@@ -59,7 +59,7 @@
 </head>
 <body>
   <div class="container">
-    <header>
+    <div class="lang-select">
       <h1 id="title">СТО Automotriz</h1>
     </header>
     <nav>
@@ -167,5 +167,39 @@
 <script>
 const translations = {
   ru: {
-    title: "СТО Automotriz", "nav-about": "О нас", "nav-services": "Услуги", "nav-boo
+    title: "СТО Automotriz", "nav-about": "О нас", "nav-services": "Услуги", "nav-booking": "Запись", "nav-contact": "Контакты",
+    "about-title": "О нас", "about-text": "СТО Automotriz — надёжный автосервис в Барселоне.",
+    "services-title": "Наши услуги", "s1": "Подготовка к ITV", "s2": "Ремонт подвески и двигателя", "s3": "Электрика", "s4": "Обслуживание коробки передач", "s5": "Компьютерная диагностика авто", "s6": "Шиномонтаж",
+    "booking-title": "Записаться онлайн", "contact-title": "Контакты", "address-label": "Адрес:", "address-text": "Calle Jardi 71, Hospitalet, Barcelona",
+    "phone-label": "Телефон:", "email-label": "Email:", "placeholder-name": "Ваше имя", "placeholder-phone": "Телефон", "placeholder-comment": "Комментарий", "placeholder-submit": "Отправить"
+  },
+  en: {
+    title: "Automotive Service", "nav-about": "About", "nav-services": "Services", "nav-booking": "Booking", "nav-contact": "Contact",
+    "about-title": "About", "about-text": "Automotriz is a reliable car service in Barcelona.",
+    "services-title": "Our Services", "s1": "ITV Prep", "s2": "Suspension and engine repair", "s3": "Electrical", "s4": "Transmission service", "s5": "Vehicle diagnostics", "s6": "Tire service",
+    "booking-title": "Book Online", "contact-title": "Contact", "address-label": "Address:", "address-text": "Calle Jardi 71, Hospitalet, Barcelona",
+    "phone-label": "Phone:", "email-label": "Email:", "placeholder-name": "Your name", "placeholder-phone": "Phone", "placeholder-comment": "Comment", "placeholder-submit": "Send"
+  }
+};
+function setLang(lang) {
+  localStorage.setItem('lang', lang);
+  const t = translations[lang];
+  if (!t) return;
+  for (const id in t) {
+    const el = document.getElementById(id);
+    if (!el) continue;
+    if (id.startsWith('placeholder-')) {
+      if (el.tagName === 'BUTTON') el.textContent = t[id];
+      else el.placeholder = t[id];
+    } else {
+      el.textContent = t[id];
+    }
+  }
+}
+document.addEventListener('DOMContentLoaded', () => {
+  const lang = localStorage.getItem('lang') || 'ru';
+  setLang(lang);
+});
+</script>
+</body>
 </html>
