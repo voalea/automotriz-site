@@ -1,0 +1,128 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title id="title">СТО Automotriz</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background: url('fon-garazh.png') no-repeat center center fixed;
+      background-size: cover;
+      color: white;
+    }
+    .container {
+      background-color: rgba(0, 0, 0, 0.75);
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 30px;
+      border-radius: 12px;
+    }
+    header, nav, footer, .lang-select {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    nav a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: #66ccff;
+    }
+    h1, h2 {
+      text-align: center;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+    input, textarea, button {
+      width: 80%;
+      padding: 10px;
+      border: none;
+      border-radius: 6px;
+      font-size: 1em;
+    }
+    button {
+      background-color: #66ccff;
+      color: black;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    iframe {
+      width: 100%;
+      height: 300px;
+      border: none;
+    }
+    .lang-select img {
+      width: 32px;
+      margin: 0 5px;
+      cursor: pointer;
+    }
+    .telegram-button {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 10px 20px;
+      background-color: #0088cc;
+      color: white;
+      border-radius: 8px;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="lang-select">
+      <img src="https://flagcdn.com/ru.svg" onclick="setLang('ru')" alt="Русский">
+      <img src="https://flagcdn.com/gb.svg" onclick="setLang('en')" alt="English">
+      <img src="https://flagcdn.com/es.svg" onclick="setLang('es')" alt="Español">
+      <img src="https://flagcdn.com/ua.svg" onclick="setLang('ua')" alt="Українська">
+      <img src="Estelada_blava.svg.png" onclick="setLang('ca')" alt="Català">
+    </div>
+    <header>
+      <h1 id="title">СТО Automotriz</h1>
+    </header>
+    <nav>
+      <a href="#about" id="nav-about">О нас</a>
+      <a href="#services" id="nav-services">Услуги</a>
+      <a href="#booking" id="nav-booking">Запись</a>
+      <a href="#contact" id="nav-contact">Контакты</a>
+    </nav>
+    <section id="about">
+      <h2 id="about-title">О нас</h2>
+      <p id="about-text">СТО Automotriz — надёжный автосервис в Барселоне.</p>
+    </section>
+    <section id="services">
+      <h2 id="services-title">Наши услуги</h2>
+      <ul id="services-list">
+        <li id="s1">Подготовка к ITV</li>
+        <li id="s2">Ремонт подвески и двигателя</li>
+        <li id="s3">Электрика</li>
+        <li id="s4">Обслуживание коробки передач</li>
+        <li id="s5">Компьютерная диагностика авто</li>
+        <li id="s6">Шиномонтаж</li>
+      </ul>
+    </section>
+    <section id="booking">
+      <h2 id="booking-title">Записаться онлайн</h2>
+      <form action="https://formsubmit.co/merrypopins1029@gmail.com" method="POST">
+        <input id="placeholder-name" name="name" placeholder="Ваше имя" required />
+        <input id="placeholder-phone" name="phone" placeholder="Телефон" required />
+        <textarea id="placeholder-comment" name="comment" placeholder="Комментарий"></textarea>
+        <button id="placeholder-submit" type="submit">Отправить</button>
+      </form>
+      <a href="https://t.me/Automotriz_taller" class="telegram-button" target="_blank">Записаться через Telegram</a>
+    </section>
+    <section id="contact">
+      <h2 id="contact-title">Контакты</h2>
+      <p><strong id="address-label">Адрес:</strong> <span id="address-text">Calle Jardi 71, Hospitalet, Barcelona</span></p>
+      <p><strong id="phone-label">Телефон:</strong> <a href="tel:+34623270609">+34 623 270 609</a></p>
+      <p><strong id="email-label">Email:</strong> <a href="mailto:merrypopins1029@gmail.com">merrypopins1029@gmail.com</a></p>
+      <iframe src="https://www.google.com/maps?q=Calle+Jardi+71,+Hospitalet,+Barcelona&output=embed"></iframe>
+    </section>
+    <footer>© 2025 СТО Automotriz</footer>
+  </div>
+</body>
+</html>
